@@ -1,5 +1,5 @@
 <template>
-  <div class="relative z-10" id="tw-modal" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+  <div class="relative z-10 hidden" id="tw-modal" aria-labelledby="modal-title" role="dialog" aria-modal="true">
     <div class="fixed inset-0 bg-gray-500 bg-opacity-50 transition-opacity"></div>
     <div class="fixed inset-0 z-10 overflow-y-auto">
       <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
@@ -38,7 +38,18 @@
 <script>
 export default {
   setup() {
-    return {}
+    function closeModal(modal) {
+      modal.classList.remove('block')
+      modal.classList.add('hidden')
+    }
+    document.addEventListener("click", () => {
+      let modal = document.getElementById('tw-modal')
+      if (modal.classList.contains('block')) {
+        closeModal(modal)
+      }
+    })
+    return {
+    }
   }
 }
 </script>

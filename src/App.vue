@@ -1,6 +1,8 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
+import ModalButton from "./components/ModalButton.vue";
+import TestModal from "./components/TestModal.vue";
 </script>
 
 <template>
@@ -16,8 +18,9 @@ import HelloWorld from './components/HelloWorld.vue'
       </nav>
     </div>
   </header>
-
+  <ModalButton />
   <RouterView />
+  <TestModal />
 </template>
 
 <style scoped>
